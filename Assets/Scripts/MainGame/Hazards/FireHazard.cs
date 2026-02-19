@@ -14,6 +14,8 @@ public class FireHazard : MonoBehaviour
     [SerializeField]
     private UnityEvent<FireEnteredEventArgs> onCharacterEntered = new UnityEvent<FireEnteredEventArgs>();
 
+    //TODO remove
+    
     // public void SetScriptableData(FireHazardScriptableObject fireHazardScriptableObject)
     // {
     //     fireHazardData = fireHazardScriptableObject;
@@ -26,7 +28,9 @@ public class FireHazard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PlayerCharacter"))
+        
+        //TODO change to get reference from game manager for the player character and compare that to other
+        if (other.gameObject.CompareTag("PlayerCharacter")) 
         {
             Debug.Log("Player entered this hazard");
             FireEnteredEventArgs fireEnteredEventArgs = new FireEnteredEventArgs
@@ -35,7 +39,7 @@ public class FireHazard : MonoBehaviour
                 targetCharacterController = other.GetComponent<PlayerCharacterController>()
             };
             onCharacterEntered?.Invoke(fireEnteredEventArgs);
-            onCharacterEnteredAction.Invoke(fireEnteredEventArgs);
+            onCharacterEnteredAction.Invoke(fireEnteredEventArgs); //TODO add null check remove?
         }
     }
 }

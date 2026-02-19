@@ -59,6 +59,8 @@ namespace NHance.Assets
             }
         }
 
+        
+        //TODO refactor to check null as unity obj  and get static reference 
         void Awake()
         {
             if(focus == null && TryToFindCharacter)

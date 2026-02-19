@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,4 +11,6 @@ public class SkillButtonUI : MonoBehaviour
     
     public Image skillIcon;
     public TextMeshProUGUI skillNameText;
+
+    
 }

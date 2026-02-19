@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArrowObject : MonoBehaviour
+public class ArrowObject : MonoBehaviour 
 {
     public float speed;
     public float damage;
@@ -8,7 +8,7 @@ public class ArrowObject : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //TODO remove
     }
 
     // Update is called once per frame
