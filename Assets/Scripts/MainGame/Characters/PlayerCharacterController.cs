@@ -106,17 +106,19 @@ public class PlayerCharacterController : MonoBehaviour
         if (animator)
             animator.SetFloat("Speed", navMeshAgent.velocity.magnitude);
         
-        if (Camera.main != null)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
-            {
-                //We want to know what the mouse is hovering now
-                Debug.Log($"Hit: {hit.collider.name}");
-            }
-        }
+        // if (Camera.main != null)
+        // {
+        //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //     if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+        //     {
+        //         //We want to know what the mouse is hovering now
+        //         Debug.Log($"Hit: {hit.collider.name}");
+        //     }
+        // }
 
     }
+    
+    // TODO remove
     
     private void OnEnable()
     {
