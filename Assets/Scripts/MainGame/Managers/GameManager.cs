@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public PlayerCharacterController playerCharacterController;
-    public Collider PlayerCharacterCollider { get; private set; }
+    public Collider playerCharacterCollider ; 
+
     [SerializeField] private FireHazardScriptableObject[] fireHazardScriptableObjects;
     [SerializeField] private FireHazard[] fireHazards;
 
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-
+  
     }
 
     private void Start()

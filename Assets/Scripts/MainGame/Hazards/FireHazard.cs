@@ -12,7 +12,7 @@ public class FireHazard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other != GameManager.Instance.PlayerCharacterCollider)
+        if (other != GameManager.Instance.playerCharacterCollider)
             return;
 
         Debug.Log("Player entered this hazard");
