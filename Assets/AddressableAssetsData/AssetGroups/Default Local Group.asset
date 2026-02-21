@@ -15,11 +15,6 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: c341be3fa2802374cbf66a0f8ed56e03
   m_SerializeEntries:
-  - m_GUID: 369d9d2bad7457844b2a4332c6ec86bd
-    m_Address: Assets/External Assets/Free RPG Icons Pack/Icons/UIIconsAtlas.spriteatlasv2
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55c1a16728b81a747b35a65a43f58389
     m_Address: Assets/Prefabs/Rooms/Sector.prefab
     m_ReadOnly: 0
