@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private PlayerCharacterController bobby;
     [SerializeField] private SkillButtonUI[] skillButtonUI;
+    [SerializeField] private Sprite[] skillIcons;
+
 
     private void Awake()
     {
@@ -17,6 +19,7 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
 
         bobby.onTakeDamageEventAction += RefreshHPText;
@@ -39,7 +42,9 @@ public class UIManager : MonoBehaviour
     {
         for (int i = 0; i < skillButtonUI.Length; i++)
         {
-            skillButtonUI[i].skillIcon.sprite = skillButtonUI[i].skillIcons[i];
+            if (skillIcons == null || skillIcons.Length == 0) return;
+
+            skillButtonUI[i].skillIcon.sprite = skillIcons[i];
             skillButtonUI[i].skillNameText.text = SKILL_LABEL_PREFIX + (i + 1);
         }
     }
