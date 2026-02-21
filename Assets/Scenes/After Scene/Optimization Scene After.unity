@@ -23899,7 +23899,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpText: {fileID: 141644880}
   bobby: {fileID: 64808986}
-  skillsHolder: {fileID: 2041494234}
   skillButtonUI: []
 --- !u!114 &2136455733
 MonoBehaviour:
@@ -23932,8 +23931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553232d8f750f1d49a022a6a81524e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 2136455733}
-  uiManager: {fileID: 2136455732}
 --- !u!114 &2136455736
 MonoBehaviour:
   m_ObjectHideFlags: 0

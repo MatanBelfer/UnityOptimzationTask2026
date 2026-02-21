@@ -1,25 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
+
     public TextMeshProUGUI hpText;
-    
+
     [SerializeField] private PlayerCharacterController bobby;
-    [SerializeField] private GameObject skillsHolder;
     [SerializeField] private SkillButtonUI[] skillButtonUI;
-    
-    
-    public void RefreshHPText(int newHP)
-    {
-        hpText.text = newHP.ToString();
-    }
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
         bobby.onTakeDamageEventAction += RefreshHPText;
     }
 
@@ -29,32 +28,19 @@ public class UIManager : MonoBehaviour
         SetSkillButtonUI();
     }
 
-    
-    //TODO change to one time method and reference  remove
-    
-    // private void Update()
-    // {
-    //     skillsHolder = GameObject.Find("Skills Group");
-    //     GameObject[] skillsButtonUI = skillsHolder.GetComponentsInChildren<GameObject>();
-    //     
-    //     for (int i = 0; i < skillsButtonUI.Length; i++)
-    //     {
-    //         skillsButtonUI[i].GetComponent<SkillButtonUI>().skillIcon.sprite =  skillsButtonUI[i].GetComponent<SkillButtonUI>().skillIcons[i];
-    //         skillsButtonUI[i].GetComponent<SkillButtonUI>().skillNameText.text = "Skill " + (i + 1);
-    //     }
-    // }
+    public void RefreshHPText(int newHP)
+    {
+        hpText.text = newHP.ToString();
+    }
 
-    
-    //TODO add maybe a inspector script to get the number of abilities
+    private const string SKILL_LABEL_PREFIX = "Skill ";
+
     private void SetSkillButtonUI()
     {
-        
         for (int i = 0; i < skillButtonUI.Length; i++)
         {
             skillButtonUI[i].skillIcon.sprite = skillButtonUI[i].skillIcons[i];
-            skillButtonUI[i].skillNameText.text = "Skill " + (i + 1);
-        } 
-        
-        
+            skillButtonUI[i].skillNameText.text = SKILL_LABEL_PREFIX + (i + 1);
+        }
     }
 }
