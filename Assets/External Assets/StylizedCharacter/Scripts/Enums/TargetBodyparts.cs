@@ -29,6 +29,6 @@ namespace NHance.Assets.Scripts.Enums
         [Name("Tusks_01")]
         Tusks = 11,
         [Name("")]
-        OrcFemBrows = 12,
+        OrcFemaleBrows = 12,
     }
 }

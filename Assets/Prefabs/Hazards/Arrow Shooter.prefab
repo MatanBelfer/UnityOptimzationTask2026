@@ -884,10 +884,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 3996197384445913458, guid: 9f4fb076d83c52e48a06dfcbbf830b01,
     type: 3}
-  arrowRotationOffsetEuler: {x: 0, y: 180, z: 0}
+  arrowRotationOffsetEuler: {x: 0, y: 90, z: 0}
   shootInterval: 3
   initialPoolSize: 8
-  returnZone: {fileID: 0}
 --- !u!1 &6312717007588697944
 GameObject:
   m_ObjectHideFlags: 0

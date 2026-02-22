@@ -67,12 +67,22 @@ namespace NHance.Assets.Scripts.Enums
         [ItemTypeDescriptor(Order = 2, Type = ItemCategory.Skin)]
         HeadAdditional = 29,
         [ItemTypeDescriptor(Order = 1, Category = ItemCategoryString.Head, PersistInGender = Gender.OrcFemale, Namespace = "Orc")]
-        OrcFemPiercing = 30,
+        OrF_Piercing = 30,
         [ItemTypeDescriptor(Order = 2, Category = ItemCategoryString.Head, PersistInGender = Gender.OrcFemale, Namespace = "Orc")]
-        OrcFemEarrings = 31,
+        OrF_Earrings = 31,
         [ItemTypeDescriptor(Order = 2, Category = ItemCategoryString.Head, PersistInGender = Gender.OrcFemale, Namespace = "Orc")]
-        OrcFemTusks = 32,
+        OrF_Tusks = 32,
         [ItemTypeDescriptor(Order = 9, Type = ItemCategory.Skin, PersistInGender = Gender.OrcFemale)]
-        OrcFemBrows = 33,
+        OrF_Brows = 33,
+        [ItemTypeDescriptor(Order = 1, Category = ItemCategoryString.Head, PersistInGender = Gender.DwarfMale, Namespace = "Dwarf")]
+        DwM_Beard = 34,
+        [ItemTypeDescriptor(Order = 2, Category = ItemCategoryString.Head, PersistInGender = Gender.DwarfMale, Namespace = "Dwarf")]
+        DwM_Moustache = 35,
+        [ItemTypeDescriptor(Order = 2, Category = ItemCategoryString.Head, PersistInGender = Gender.DwarfMale, Namespace = "Dwarf")]
+        DwM_Brows = 36,
+        [ItemTypeDescriptor(Order = 2, Type = ItemCategory.Skin)]
+        HeadScars = 37,
+        [ItemTypeDescriptor(Order = 1, Category = ItemCategoryString.Head, PersistInGender = Gender.DwarfFemale, Namespace = "Dwarf")]
+        DwF_Brows = 38,
     }
 }

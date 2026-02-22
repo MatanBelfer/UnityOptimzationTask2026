@@ -9,6 +9,8 @@ namespace NHance.Assets.Scripts.Enums
         HumanFemale = 1,
         OrcMale = 2,
         OrcFemale = 3,
-        All = 4
+        DwarfMale = 4,
+        DwarfFemale = 5,
+        All = 6
     }
 }

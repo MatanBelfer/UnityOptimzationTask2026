@@ -58,7 +58,6 @@ namespace NHance.Assets.Scripts
         public float SmoothTime = 0.1f;
         public float TransitionTime = 0.025f;
         public float NextLongIdleAnimationTime = 5;
-        public float rotationSpeed = 360f;
 
         public float distanceToGround
         {

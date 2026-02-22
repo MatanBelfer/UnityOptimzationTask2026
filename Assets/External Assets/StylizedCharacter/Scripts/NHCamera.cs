@@ -59,7 +59,7 @@ namespace NHance.Assets
             }
         }
 
-        
+        [Obsolete("Obsolete")]
         void Awake()
         {
             if(focus == null && TryToFindCharacter)

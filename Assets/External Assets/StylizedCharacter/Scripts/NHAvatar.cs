@@ -64,11 +64,11 @@ namespace NHance.Assets.Scripts
                 .Where(m => m != null).ToList().Count > 0
                 ? Items[ItemTypeEnum.FemBrows].Mappers.SelectMany(m => m.Materials).Where(m => m != null).ToArray()
                 : DefaultFemBrowsMaterial.Where(m => m != null).ToArray();
-        public Material[] OrcFemBrowsMaterial =>
-           Items[ItemTypeEnum.OrcFemBrows] != null && Items[ItemTypeEnum.OrcFemBrows].Mappers.SelectMany(m => m.Materials)
-               .Where(m => m != null).ToList().Count > 0
-               ? Items[ItemTypeEnum.OrcFemBrows].Mappers.SelectMany(m => m.Materials).Where(m => m != null).ToArray()
-               : DefaultOrcFemBrowsMaterial.Where(m => m != null).ToArray();
+        public Material[] OrcBrowsMaterial =>
+        Items[ItemTypeEnum.OrF_Brows] != null && Items[ItemTypeEnum.OrF_Brows].Mappers.SelectMany(m => m.Materials)
+        .Where(m => m != null).ToList().Count > 0
+        ? Items[ItemTypeEnum.OrF_Brows].Mappers.SelectMany(m => m.Materials).Where(m => m != null).ToArray()
+        : DefaultOrcFemBrowsMaterial.Where(m => m != null).ToArray();
 
         private void Start()
         {
@@ -173,8 +173,8 @@ namespace NHance.Assets.Scripts
                     return EyeMaterial;
                 case TargetBodyparts.FemBrows:
                     return FemBrowsMaterial;
-                case TargetBodyparts.OrcFemBrows:
-                    return OrcFemBrowsMaterial;
+                case TargetBodyparts.OrcFemaleBrows:
+                    return OrcBrowsMaterial;
                 case TargetBodyparts.Torso:
                 case TargetBodyparts.Bracers:
                 case TargetBodyparts.Hands:
@@ -216,7 +216,6 @@ namespace NHance.Assets.Scripts
                 case ItemTypeEnum.HeadSkin:
                 case ItemTypeEnum.Eyes:
                 case ItemTypeEnum.FemBrows:
-                case ItemTypeEnum.OrcFemBrows:
                     return;
             }
 
@@ -448,7 +447,7 @@ namespace NHance.Assets.Scripts
         {
             foreach (Transform child in parent)
             {
-                if(child.name == childName)
+                if(child.name.ToLower() == childName.ToLower())
                 {
                     return child;
                 }

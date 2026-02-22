@@ -8,7 +8,7 @@ public class ConvertMaterialsToURP : EditorWindow
 {
     private string path;
     private int conversionOption = 0;
-    private string[] options = new string[] { "Chosen Folder + All Subfolders", "Only Chosen Folder", "Whole Project" };
+    private string[] options = new string[] { "Chosen Folder + All Subfolders", "Only Chosen Folder"};
     private bool showInstructions = false;
 
     [MenuItem("Tools/Material Converter to URP")]
@@ -35,13 +35,7 @@ public class ConvertMaterialsToURP : EditorWindow
             }
         }
 
-        if (conversionOption == 2)
-        {
-            if (GUILayout.Button("Convert Entire Project"))
-            {
-                ConvertMatsToURP(Application.dataPath, conversionOption);
-            }
-        }
+
         GUILayout.Space(30);
         EditorGUILayout.HelpBox("Please note that this process is irreversible.\n Before using this script, we recommend you to make a backup of your project to avoid unwanted changes.", MessageType.Warning);
         GUILayout.Space(30);
@@ -62,7 +56,7 @@ public class ConvertMaterialsToURP : EditorWindow
     private void ConvertMatsToURP(string folderPath, int option)
     {
         SearchOption searchOption = option == 0 ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-        string[] materialFiles = Directory.GetFiles(folderPath, "*.mat", SearchOption.TopDirectoryOnly);
+        string[] materialFiles = Directory.GetFiles(folderPath, "*.mat", searchOption);
         int convertedMaterialsCount = 0;
 
         AssetDatabase.StartAssetEditing();

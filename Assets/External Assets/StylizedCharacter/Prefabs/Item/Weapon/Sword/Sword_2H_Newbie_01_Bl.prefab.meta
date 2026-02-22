@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 84c939194b04458aae7e78e8d0adc5cf
+guid: 8dd3f17f8b507b440ab74ab6984674ca
 PrefabImporter:
   externalObjects: {}
   userData: 
@@ -9,6 +9,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 200709
   packageName: Stylized Newbie Weapons Pack
-  packageVersion: 1.3.5
-  assetPath: Assets/StylizedCharacter/Prefabs/Item/Weapon/Sword/Sword_2H_Newbie_01_Bl.prefab
-  uploadId: 657500
+  packageVersion: 1.4.2
+  assetPath: Assets/External Assets/StylizedCharacter/Prefabs/Item/Weapon/Sword/Sword_2H_Newbie_01_Bl.prefab
+  uploadId: 783623

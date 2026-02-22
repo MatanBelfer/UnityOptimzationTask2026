@@ -146,6 +146,12 @@ namespace NHance.Assets.Scripts
                 case Gender.OrcFemale:
                     _instance.characterPrefix = "Or_F";
                     break;
+                case Gender.DwarfMale:
+                    _instance.characterPrefix = "Dw_M";
+                    break;
+                case Gender.DwarfFemale:
+                    _instance.characterPrefix = "Dw_F";
+                    break;
                 default:
                     break;
             }
@@ -195,7 +201,7 @@ namespace NHance.Assets.Scripts
             else
                 _instance.DefaultFemBrowsMaterial.Clear();
             if (_instance.Gender == Gender.OrcFemale)
-                GUIUtils.DrawMaterialList("Default Female Brows Materials", _instance.DefaultOrcFemBrowsMaterial);
+                GUIUtils.DrawMaterialList("Default Orc Female Brows Materials", _instance.DefaultOrcFemBrowsMaterial);
             else
                 _instance.DefaultOrcFemBrowsMaterial.Clear();
 
@@ -299,12 +305,13 @@ namespace NHance.Assets.Scripts
                 GUILayout.Space(10);
                 foreach (var e in _instance.PartsMap)
                 {
-                    if ((_instance.Gender == Gender.HumanMale || _instance.Gender==Gender.OrcMale)  && e.Type == TargetBodyparts.FemBrows)
+                    if ((_instance.Gender == Gender.HumanMale || _instance.Gender==Gender.OrcMale || _instance.Gender == Gender.OrcFemale || _instance.Gender == Gender.DwarfMale || _instance.Gender == Gender.DwarfFemale)  && e.Type == TargetBodyparts.FemBrows)
                         continue;
-                    else if ((_instance.Gender == Gender.HumanMale || _instance.Gender == Gender.HumanFemale) && e.Type == TargetBodyparts.Tusks)
+                    else if ((_instance.Gender == Gender.HumanMale || _instance.Gender == Gender.OrcMale || _instance.Gender == Gender.HumanFemale || _instance.Gender == Gender.DwarfMale || _instance.Gender == Gender.DwarfFemale) && e.Type == TargetBodyparts.OrcFemaleBrows)
                         continue;
-                    else if ((_instance.Gender == Gender.OrcFemale) && e.Type == TargetBodyparts.FemBrows)
+                    else if ((_instance.Gender == Gender.HumanMale || _instance.Gender == Gender.HumanFemale || _instance.Gender == Gender.DwarfMale || _instance.Gender == Gender.DwarfFemale) && e.Type == TargetBodyparts.Tusks)
                         continue;
+                    
                     using (new GUILayout.HorizontalScope())
                     {
                         GUILayout.Label(e.Type.ToString());
